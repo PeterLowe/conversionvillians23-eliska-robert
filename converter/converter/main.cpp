@@ -5,6 +5,7 @@
 
 char printMenu();
 void DegreesToRadians();
+void fahrenheitToCelsius();
 
 int main() 
 {
@@ -13,9 +14,14 @@ int main()
 	
 	if (choice == 'A')
 	{
-		DegreesToRadians(); 
+		DegreesToRadians();
+	}
+	if (choice == 'f')
+	{
+		fahrenheitToCelsius();
 	}
 
+	std::cout << "Thank you for using Eliska and RoB's super converter and remember to rate us above Pete's converter."<< std::endl;
 	system("Pause");
 	return 0;
 }
@@ -46,5 +52,14 @@ void DegreesToRadians()
 	std::cin >> degrees;
 	radians = degrees * CONVERSION; //converts degrees to radians
 	std::cout << "The angle in radians is:" << radians << std::endl;
+}
 
+void fahrenheitToCelsius()
+{
+	int userInput = 0;
+	int output = 0;
+	std::cout << "What's the temperature in Fahrenheit? ";
+	std::cin >> userInput;
+	output = (userInput - 32) * 5 / 9;
+	std::cout << userInput << " Fahrenheit is " << output << " in Celsius." << std::endl;
 }
