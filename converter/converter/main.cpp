@@ -7,6 +7,7 @@ char printMenu();
 void DegreesToRadians(); //eliska
 void fahrenheitToCelsius(); //rob
 void centimetersToFeetInches(); //eliska
+void litersToGallons(); // eliska
 
 int main() 
 {
@@ -24,6 +25,10 @@ int main()
 	if(choice == 'B')
 	{
 		centimetersToFeetInches();
+	}
+	if (choice == 'C')
+	{
+		litersToGallons();
 	}
 
 	std::cout << "Thank you for using Eliska and RoB's super converter and remember to rate us above Pete's converter."<< std::endl;
@@ -88,3 +93,16 @@ void  centimetersToFeetInches() //eliska
 	std::cout << "The lenght is" << feet << "feet and" << inches << "inches" << std::endl;
 }
 
+void litersToGallons()
+{
+	float litres = 0.0f;
+	float gallons = 0.0f;
+	float const CONVERSION = 0.2199f;
+
+	std::cout << "What is the volme in litres?" << std::endl;
+	std::cin >> litres;
+
+	gallons = litres * CONVERSION;
+
+	std::cout << "The volume in gallons is" << gallons << std::endl;
+}
