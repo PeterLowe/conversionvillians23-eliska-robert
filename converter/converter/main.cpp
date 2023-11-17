@@ -4,8 +4,9 @@
 #include <iostream>
 
 char printMenu();
-void DegreesToRadians();
+void degreesToRadians();
 void fahrenheitToCelsius();
+void stonesPoundsToKilos();
 
 int main() 
 {
@@ -14,14 +15,18 @@ int main()
 	
 	if (choice == 'A')
 	{
-		DegreesToRadians();
+		degreesToRadians();
 	}
 	if (choice == 'f')
 	{
 		fahrenheitToCelsius();
 	}
+	if (choice == 'e') 
+	{
+		stonesPoundsToKilos();
+	}
 
-	std::cout << "Thank you for using Eliska and RoB's super converter and remember to rate us above Pete's converter."<< std::endl;
+	std::cout << "Thank you for using Eliska and RoB's super converter and \nremember to rate us above Pete's converter."<< std::endl;
 	system("Pause");
 	return 0;
 }
@@ -33,7 +38,7 @@ char printMenu()
 	std::cout << "[B] Centimeters  <--->  Feet & Inches [b]" << std::endl;
 	std::cout << "[C] Litres  <--->  Gallons   [c]" << std::endl;
 	std::cout << "[D] Mpg <---> L/100km [d]" << std::endl;
-	std::cout << "[E] Kilograms <---> Stone & Pounts [e]" << std::endl;
+	std::cout << "[E] Kilograms <---> Stone & Pounds [e]" << std::endl;
 	std::cout << "[F] Celsius <---> Fahrenheit [f]" << std::endl;
 
 	std::cout << "[Q] Exit   [---] Exit   [q]" << std::endl;
@@ -42,7 +47,7 @@ char printMenu()
 	return choice;
 }
 
-void DegreesToRadians()
+void degreesToRadians()
 {
 	float degrees = 0.0f;
 	float radians = 0.0f;
@@ -56,10 +61,28 @@ void DegreesToRadians()
 
 void fahrenheitToCelsius()
 {
-	int userInput = 0;
-	int output = 0;
+	float userInput = 0.0f;
+	float output = 0.0f;
 	std::cout << "What's the temperature in Fahrenheit? ";
 	std::cin >> userInput;
 	output = (userInput - 32) * 5 / 9;
 	std::cout << userInput << " Fahrenheit is " << output << " in Celsius." << std::endl;
+}
+
+void stonesPoundsToKilos()
+{
+	float poundsInput = 0.0f;
+	float stonesInput = 0.0f;
+	float poundsTotal = 0.0f;
+	float output = 0.0f;
+	std::cout << "How many Pounds would you like to convert? [Stones next]";
+	std::cin >> poundsInput;
+	std::cout << "How many Stones would you like to convert?";
+	std::cin >> stonesInput;
+
+	poundsTotal = (stonesInput * 14) + poundsInput;
+
+	output = poundsTotal * 0.45359237f;
+
+	std::cout << poundsInput << " pounds and " << stonesInput << " stones are " << output << "kg.";
 }
