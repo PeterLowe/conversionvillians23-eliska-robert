@@ -5,6 +5,7 @@
 
 char printMenu();
 void DegreesToRadians();
+void centimetersToFeetInches();
 
 int main() 
 {
@@ -14,6 +15,10 @@ int main()
 	if (choice == 'A')
 	{
 		DegreesToRadians(); 
+	}
+	if(choice == 'B')
+	{
+		centimetersToFeetInches();
 	}
 
 	system("Pause");
@@ -47,4 +52,22 @@ void DegreesToRadians()
 	radians = degrees * CONVERSION; //converts degrees to radians
 	std::cout << "The angle in radians is:" << radians << std::endl;
 
+}
+
+void  centimetersToFeetInches()
+{
+	float centimeters = 0.0f;
+	float inches = 0.0f;
+	int feet = 0.0f;
+	const float CENT_TO_INCH = 0.3937;
+	const int FOOT = 12;
+
+	std::cout << "What is the lenght in centimeters?" << std::endl;
+	std::cin >> centimeters;
+
+	inches = centimeters * CENT_TO_INCH;
+	feet = inches / FOOT;
+	inches = inches - (feet*FOOT);
+
+	std::cout << "The lenght is" << feet << "feet and" << inches << "inches" << std::endl;
 }
