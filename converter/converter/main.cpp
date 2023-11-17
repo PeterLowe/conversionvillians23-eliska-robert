@@ -1,5 +1,5 @@
 //eliska vrzalova
-
+//RoBert McGregor
 
 int main() 
 {
