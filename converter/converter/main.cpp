@@ -4,11 +4,17 @@
 #include <iostream>
 
 char printMenu();
+void DegreesToAngles();
+
 int main() 
 {
 	char choice = ' ';
 	choice = printMenu(); //function call
 	
+	if (choice == 'A')
+	{
+		DegreesToAngles(); 
+	}
 
 	system("Pause");
 	return 0;
@@ -28,4 +34,9 @@ char printMenu()
 	std::cout << "Enter your choice:";
 	std::cin >> choice;
 	return choice;
+}
+
+void DegreesToAngles()
+{
+
 }
