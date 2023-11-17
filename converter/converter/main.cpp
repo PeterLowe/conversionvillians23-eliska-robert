@@ -4,12 +4,19 @@
 #include <iostream>
 
 char printMenu();
+void fahrenheitToCelsius();
+
 int main() 
 {
 	char choice = ' ';
 	choice = printMenu(); //function call
 	
+	if (choice == 'f')
+	{
+		fahrenheitToCelsius();
+	}
 
+	std::cout << "Thank you for using Eliska and RoB's super converter and remember to never use Pete's inferior converter."
 	system("Pause");
 	return 0;
 }
@@ -28,4 +35,14 @@ char printMenu()
 	std::cout << "Enter your choice:";
 	std::cin >> choice;
 	return choice;
+}
+
+void fahrenheitToCelsius()
+{
+	int userInput = 0;
+	int output = 0;
+	std::cout << "What's the temperature in Fahrenheit?";
+	std::cin >> userInput;
+	output = (userInput - 32) * 5 / 9;
+	std::cout << userInput << " fahrenheit is " << output << " in Celsius." << std::endl;
 }
