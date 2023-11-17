@@ -4,7 +4,7 @@
 #include <iostream>
 
 char printMenu();
-void DegreesToAngles();
+void DegreesToRadians();
 
 int main() 
 {
@@ -13,7 +13,7 @@ int main()
 	
 	if (choice == 'A')
 	{
-		DegreesToAngles(); 
+		DegreesToRadians(); 
 	}
 
 	system("Pause");
@@ -36,7 +36,15 @@ char printMenu()
 	return choice;
 }
 
-void DegreesToAngles()
+void DegreesToRadians()
 {
+	float degrees = 0.0f;
+	float radians = 0.0f;
+	float const CONVERSION = 0.0174f;
+
+	std::cout << "What is the the angle in degrees?" << std::endl;
+	std::cin >> degrees;
+	radians = degrees * CONVERSION; //converts degrees to radians
+	std::cout << "The angle in radians is:" << radians << std::endl;
 
 }
