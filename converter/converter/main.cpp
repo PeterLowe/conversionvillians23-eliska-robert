@@ -8,6 +8,7 @@ void DegreesToRadians(); //eliska
 void fahrenheitToCelsius(); //rob
 void centimetersToFeetInches(); //eliska
 void litersToGallons(); // eliska
+void mpgToL100Kg(); //eliska
 
 int main() 
 {
@@ -29,6 +30,10 @@ int main()
 	if (choice == 'C')
 	{
 		litersToGallons();
+	}
+	if (choice == 'D')
+	{
+		mpgToL100Kg();
 	}
 
 	std::cout << "Thank you for using Eliska and RoB's super converter and remember to rate us above Pete's converter."<< std::endl;
@@ -105,4 +110,17 @@ void litersToGallons()
 	gallons = litres * CONVERSION;
 
 	std::cout << "The volume in gallons is" << gallons << std::endl;
+}
+
+void mpgToL100Kg()
+{
+	float mpg = 0.0f;
+	float l100Kg = 0.0f;
+	const float CONVERSION = 235.2145f;
+
+	std::cout << "What is the efficiency in mpg?" << std::endl;
+	std::cin >> mpg;
+
+	l100Kg = mpg * CONVERSION;
+	std::cout << "The efficiency in l/100kg is:" << l100Kg << std::endl;
 }
