@@ -3,9 +3,10 @@
 
 #include <iostream>
 
-char printMenu();
-void DegreesToRadians();
-void fahrenheitToCelsius();
+char printMenu(); 
+void DegreesToRadians(); //eliska
+void fahrenheitToCelsius(); //rob
+void centimetersToFeetInches(); //eliska
 
 int main() 
 {
@@ -19,6 +20,10 @@ int main()
 	if (choice == 'f')
 	{
 		fahrenheitToCelsius();
+	}
+	if(choice == 'B')
+	{
+		centimetersToFeetInches();
 	}
 
 	std::cout << "Thank you for using Eliska and RoB's super converter and remember to rate us above Pete's converter."<< std::endl;
@@ -42,7 +47,7 @@ char printMenu()
 	return choice;
 }
 
-void DegreesToRadians()
+void DegreesToRadians() //eliska
 {
 	float degrees = 0.0f;
 	float radians = 0.0f;
@@ -54,7 +59,7 @@ void DegreesToRadians()
 	std::cout << "The angle in radians is:" << radians << std::endl;
 }
 
-void fahrenheitToCelsius()
+void fahrenheitToCelsius() //rob
 {
 	int userInput = 0;
 	int output = 0;
@@ -63,3 +68,23 @@ void fahrenheitToCelsius()
 	output = (userInput - 32) * 5 / 9;
 	std::cout << userInput << " Fahrenheit is " << output << " in Celsius." << std::endl;
 }
+
+
+void  centimetersToFeetInches() //eliska
+{
+	float centimeters = 0.0f;
+	float inches = 0.0f;
+	int feet = 0.0f;
+	const float CENT_TO_INCH = 0.3937;
+	const int FOOT = 12;
+
+	std::cout << "What is the lenght in centimeters?" << std::endl;
+	std::cin >> centimeters;
+
+	inches = centimeters * CENT_TO_INCH;
+	feet = inches / FOOT;
+	inches = inches - (feet*FOOT);
+
+	std::cout << "The lenght is" << feet << "feet and" << inches << "inches" << std::endl;
+}
+
